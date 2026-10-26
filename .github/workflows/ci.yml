@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  repository-hygiene:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check for forbidden files
+        shell: bash
+        run: |
+          if find . -type f \( -name '.env' -o -name '*.pem' -o -name '*.key' \) -not -path './.git/*' | grep -q .; then
+            echo 'Forbidden credential-like file found.'
+            exit 1
+          fi
+      - name: Validate required documents
+        shell: bash
+        run: |
+          test -s README.md
+          test -s CONTRIBUTING.md
+          test -s SECURITY.md
+          test -s LICENSE
+          test -s docs/adr/0001-project-foundation.md
