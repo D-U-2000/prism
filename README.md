@@ -35,7 +35,7 @@ services/          service boundaries and adapters
 4. Show the flow through a glass-box demo.
 5. Record evidence before expanding scope.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md), [SECURITY.md](SECURITY.md), and [docs/adr/0001-project-foundation.md](docs/adr/0001-project-foundation.md).
+Start with the [documentation index](docs/README.md) and [working rules](AGENTS.md). See [CONTRIBUTING.md](CONTRIBUTING.md) for contributions and [SECURITY.md](SECURITY.md) for reporting.
 
 ## License
 

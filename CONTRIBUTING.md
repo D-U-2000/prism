@@ -8,6 +8,8 @@ Prism is an educational financial systems project. Contributions should make sys
 - Keep one behavioral change per pull request.
 - Add or update the invariant, test, or simulation that proves the change.
 - Run the local checks described in the repository Makefile.
+- Run `python tools/check_docs.py` (Python 3) for document structure and local file links. It does not check external URLs, anchors or factual accuracy.
+- Follow the [documentation standard](docs/standards/documentation.md) and [working method](docs/standards/method.md).
 - Do not include secrets, real payment data, or provider credentials.
 
 ## Pull request checklist
