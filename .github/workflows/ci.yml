@@ -33,3 +33,5 @@ jobs:
           test -s SECURITY.md
           test -s LICENSE
           test -s docs/adr/0001-project-foundation.md
+      - name: Check documentation links and structure
+        run: python3 tools/check_docs.py

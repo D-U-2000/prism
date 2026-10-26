@@ -1,10 +1,10 @@
 .PHONY: check fmt test
 
 check:
-	@echo "Prism checks will be wired when the implementation language is selected."
+	python tools/check_docs.py
 
 fmt:
-	@echo "No formatter configured yet."
+	@echo "No formatter configured yet."; exit 1
 
 test:
-	@echo "No implementation tests configured yet."
+	@echo "No implementation tests configured yet."; exit 1
