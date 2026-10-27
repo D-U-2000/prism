@@ -7,6 +7,7 @@ Start here to understand Prism or resume work. Maintainer: @vothanhdat2000.
 - [Working method](standards/method.md): Prism loop, metrics and handoff. Shared evidence rules are in the engineering handbook.
 - [Project foundation](adr/0001-project-foundation.md): accepted architectural direction.
 - [Roadmap proposal](roadmap.md): vision, readers, milestones and the decisions that come next (draft).
+- [Payment orchestration research](research/payment-orchestration.md): source checks, safe-routing constraints and a future simulation proposal (sc-86).
 - [M0 payment specification](specs/m0-payment.md): first scenario and proposed invariants.
 - [Handoff](handoff.md): current next action and unresolved questions.
 - [Templates](templates.md): minimum structures for proposals, decisions, experiments and procedures.
