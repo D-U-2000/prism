@@ -1,1 +1,8 @@
+# Default owner
 * @vothanhdat2000
+
+# High-risk paths: human approval required (see REVIEW.md)
+/docs/adr/ @vothanhdat2000
+/docs/specs/ @vothanhdat2000
+/.github/workflows/ @vothanhdat2000
+/.github/CODEOWNERS @vothanhdat2000
