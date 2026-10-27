@@ -28,7 +28,19 @@ A timeout may occur after provider A accepted a payment. Blindly sending the pay
 
 Route eligibility must precede optimization: currency, country, payment method, amount, merchant enablement and current operation state constrain the candidates. Lowest fee and highest success rate can conflict; historical estimates are not guarantees. Location or device alone should not override a customer's available methods.
 
-## Bounded simulation proposal
+## Competitive narrative limits
+
+The follow-up narrative asserts that regional providers are less capable because their infrastructure problem is several times harder. No comparative workload, usability study or financial evidence was supplied to support that ranking or multiplier.
+
+- Stripe's [global availability](https://stripe.com/global) is conditional on supported business locations. Global customer reach and merchant onboarding availability are different claims.
+- Stripe's [pricing](https://stripe.com/pricing) varies by location and method. A headline processing fee is not measured net margin, R&D budget or average realized revenue; this review has not established comparable unit economics.
+- Stripe describes Radar as using its [global network](https://stripe.com/radar). That supports a vendor claim of network-derived signals, not a conclusion that other processors have no useful data or cannot detect fraud.
+- Country-specific adapters constrain reuse, but do not make common ledger, reconciliation, observability and API components useless. This is an architectural inference to test, not a measured competitive advantage.
+- India and Brazil are useful payment-system comparisons outside Southeast Asia. Counts of countries must not be treated as identical counts of currencies, central banks or integration contracts.
+
+For Prism, the credible ambition is a reproducible result on a bounded problem: explain ambiguous outcomes, preserve financial invariants and show recovery with less operator effort. Beating a provider on that dimension would require a comparable baseline. A synthetic benchmark does not establish commercial superiority or production readiness.
+
+## Proposed experiment
 
 After current milestone evidence, consider two fictional adapters with different capabilities, configurable fees and deterministic failures. No live integrations, cross-border settlement or FX implementation are proposed for M0.
 
