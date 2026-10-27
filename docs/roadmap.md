@@ -43,6 +43,20 @@ Each milestone opens only when the previous one has recorded evidence.
 
 Decision 1 shapes 5 and 6, so this page is reviewed together with ADR 0002. Decision 2 blocks the M0 specification update. The spike result is recorded as ADR 0003 before ADR 0004 is written.
 
+## ADR schedule
+
+A row is written when its milestone starts. It is not written early to cover a role. Each ADR follows the technology-decision rule in engineering-handbook `standards.md`: same score for the chosen option and the rejected ones, plus a revisit condition.
+
+| When | ADR | Decision |
+|---|---|---|
+| This iteration | 0003 | Language for the ledger core, from the Rust spike |
+| This iteration | 0004 | Architecture, database, and per-payment locking |
+| Before M0 code | 0005 | Test strategy: invariant tests, property tests, deterministic simulator |
+| Before M0 code | 0006 | API and trace contract |
+| Start of M1 | 0007 | Frontend stack and component library |
+| Start of M2 | 0008 | Observability: logs, metrics, traces |
+| Before release | 0009 | Delivery: CI, release, and versioning |
+
 ## Brand and UX direction
 
 Direction only, not a design.
