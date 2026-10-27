@@ -1,5 +1,7 @@
 # Prism working rules
 
+Binding rules: engineering-handbook [`standards.md`](https://github.com/D-U-2000/engineering-handbook/blob/main/standards.md) and [`working-agreement.md`](https://github.com/D-U-2000/engineering-handbook/blob/main/working-agreement.md). This file only adds Prism-specific rules; if they conflict, the handbook wins. The handbook repository is private. When a clone sits beside this repo at `../engineering-handbook`, read that clone; GitHub remains the canonical source.
+
 Read [docs/README.md](docs/README.md) and the relevant source document before changing anything.
 
 - Repository documentation is the source for specifications, decisions and evidence. Shortcut owns delivery status. Chats are working conversations.
