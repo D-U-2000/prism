@@ -3,8 +3,8 @@
 Start here to understand Prism or resume work. Maintainer: @vothanhdat2000.
 
 - [Project overview](../README.md): purpose, scope and maturity.
-- [Documentation standard](standards/documentation.md): how to write and maintain documents.
-- [Working method](standards/method.md): decisions, experiments, evidence and review.
+- [Documentation standard](standards/documentation.md): Prism-only document rules. Shared rules are in the engineering handbook.
+- [Working method](standards/method.md): Prism loop, metrics and handoff. Shared evidence rules are in the engineering handbook.
 - [Project foundation](adr/0001-project-foundation.md): accepted architectural direction.
 - [M0 payment specification](specs/m0-payment.md): first scenario and proposed invariants.
 - [Handoff](handoff.md): current next action and unresolved questions.
