@@ -17,8 +17,8 @@ Read [docs/README.md](docs/README.md) and the relevant source document before ch
 
 ## Routing
 
-- Writing and review: [documentation standard](docs/standards/documentation.md).
-- Decisions, experiments and metrics: [working method](docs/standards/method.md).
+- Writing and review: [documentation standard](docs/standards/documentation.md). Prism-only rules; the handbook wins on conflict.
+- Decisions, experiments and metrics: [working method](docs/standards/method.md). Prism-only loop; the handbook wins on conflict.
 - Current work and continuity: [handoff](docs/handoff.md).
 - Contribution and PR workflow: [CONTRIBUTING.md](CONTRIBUTING.md).
 - Initial scenario: [M0 specification](docs/specs/m0-payment.md).

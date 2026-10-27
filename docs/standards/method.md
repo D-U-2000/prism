@@ -1,6 +1,8 @@
 # Working method
 
-Status: Accepted. Owner: @vothanhdat2000. Updated: 2026-10-26.
+Status: Accepted. Owner: @vothanhdat2000. Updated: 2026-10-27.
+
+Evidence layers, the limit of a green check, and proportionate review live in engineering-handbook `standards.md`. This page only adds the Prism loop. If they conflict, the handbook wins.
 
 ## From question to evidence
 
@@ -12,15 +14,11 @@ Status: Accepted. Owner: @vothanhdat2000. Updated: 2026-10-26.
 6. Explain the conclusion and obtain acceptance for a new durable decision.
 7. Update the canonical document and leave the next action in the handoff.
 
-## Evidence and metrics
-
-Distinguish observed fact, inference, unknown and accepted decision. A matching implementation or a green check does not establish correctness beyond what was checked.
+## Metrics
 
 Each metric specifies its definition, units, population or denominator, time window, collection method and the decision it informs. Benchmarks also record hardware, versions, workload, seed, repetitions and variability. Record baseline as unmeasured until evidence exists.
 
-## Proportionate review
-
-Wording changes need a content and link review. Contract or invariant changes need scenario evidence and affected-consumer analysis. Ledger, security and access changes require explicit failure analysis and appropriate human review.
+## States and procedures
 
 Use named states: proposed, written, checked, applied. Do not report completion merely because a file exists. A procedure includes prerequisites, commands, expected output, failure handling and recovery.
 
