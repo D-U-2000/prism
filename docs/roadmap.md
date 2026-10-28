@@ -1,83 +1,60 @@
 # Roadmap proposal
 
-Status: Draft for owner and business review. Owner: @vothanhdat2000. Updated: 2026-10-27.
-Acceptance needed: @vothanhdat2000 (engineering) and @lvphuyn1500 (business), recorded as PR review.
+Status: Proposed for owner and business review. Owner: @vothanhdat2000. Updated: 2026-10-28.
+Tracking: [sc-77](https://app.shortcut.com/du-1/story/77). Acceptance requires engineering and business review on the PR.
 
-## Vision
+## Purpose
 
-Prism is a place where money moves in plain sight and every unit is explained. One payment goes in; a spectrum of balanced journal entries comes out, and none is lost.
+Deliver the [payment exception workflow](product.md) in small, verifiable steps. The sandbox supplies evidence; investigation is the proposed product. No runnable implementation exists yet.
 
-The ambition is to hold Prism to the same money discipline a State Bank of Vietnam-licensed intermediary payment provider must hold under Decree 52/2024/ND-CP and Circular 40/2024/TT-NHNN as amended: correct invariants, an auditable journal, provable recovery from failure. Prism earns that discipline without the license, because no real money and no real customer ever passes through it. That is a deliberate boundary, not a lower bar: it proves the hardest engineering question (does the money always add up, under every failure) before the hardest business question (capital, licensing, regulated operation) is ever in play. Whether that discipline is later aimed at an actual licensed product is a separate, future decision; nothing here commits to it.
+M0, M1 and M2 remain the milestone names. This proposal changes their scope; it does not silently complete or rename existing Shortcut implementation stories.
 
-The project is evidence for two things: how a correct money system behaves, and how D&U 2000 makes decisions, verifies behavior and learns from delivery.
+Each milestone starts only after the previous gate has recorded evidence and owner acceptance. Keep at most three active stories; finish a useful slice before opening another workstream.
 
-Prism is not an end-user product and will not hold real customer money. It handles virtual money and simulated providers only ([ADR 0001](adr/0001-project-foundation.md)).
+## M0: One explainable payment exception
 
-## Readers, in priority order
+Provide one local synthetic case from input to evidence summary. Start with provider success followed by a timeout and a duplicate callback. Include an unresolved variant with insufficient evidence.
 
-1. **Engineers learning payment infrastructure** run a scenario, inject a failure and watch the ledger balance again.
-2. **People evaluating the team** (hiring managers, partners, contributors) read the decisions, PRs and demo trace, and judge the method as well as the code.
-3. **The business maintainer** applies the business handbook's acceptance method to a domain with money. Money policy is the first decision reviewed jointly by engineering and business.
+- Define the case bundle and expected findings first: amount/currency, source identifiers, timestamps, provenance and policy version.
+- Build a deterministic minimal fixture generator or simulator and a read-only analyzer. A complete payment processor is not a prerequisite.
+- Provide a CLI export and a minimal static case viewer showing timeline, evidence, discrepancy and next-action preconditions. This is the first visible app, not a production dashboard.
+- Demonstrate repeatable output, no duplicate financial effect in the simulator, and no invented certainty when evidence is missing.
 
-## Milestones
+Exit evidence: reproducible commands, fixture versions, expected versus actual findings, failure cases and a maintainer walkthrough. A screenshot proves neither performance nor market value.
 
-Each milestone opens only when the previous one has recorded evidence.
+## M1: An operator can investigate independently
 
-| Milestone | Question it answers | Evidence |
-|---|---|---|
-| M0 | Is one payment's money correct through capture, refund and payout, including failures and a refund racing a payout on the same payment? | Scenario tests, failure simulations, reconciliation output, CLI trace |
-| M1 | Can a reader see why it is correct? | Scenario runner, timeline and ledger views over the M0 trace |
-| M2 | Does it stay correct with many payments running at once? | Concurrency tests against the real database |
-| Later | Banking features | Gated on M0–M2 evidence |
+Extend the M0 viewer into a usable local workflow. Add case selection, evidence drill-down and export as needed for the task. Include delayed, out-of-order and conflicting evidence and a recording gap after a simulated crash.
 
-## Decisions, in dependency order
+Exit evidence: an observed user trial using the [validation method](product.md#validation-and-measures), with errors, assistance and incomplete tasks recorded. Unsafe recommendations must be corrected before release. Failure to improve the task triggers narrowing, not more features.
 
-| # | Decision | Recommendation | Record | Decides |
-|---|---|---|---|---|
-| 1 | Purpose and readers | This page | This proposal | Owner + business |
-| 2 | Money policy | Fee leaves the guarantee fund at payout settlement. A full refund returns the fee and is valid only while the payment is captured with no payout pending: rejected while a payout is pending, valid again after the payout returns, rejected after it settles. A return is accepted only from a pending payout; a return after settlement goes to reconciliation. Liability accounts and `provider_clearing` never go negative. Transitions on one payment are serialized. Payout is in M0 with settled and returned paths; partial refund is out of M0 | ADR 0002 | Owner + business |
-| 3 | Implementation language | One-day Rust spike of the payment and payout state machine with the journal, no database. Rust for the ledger core if the compiler catches real state errors within the day; otherwise Go, with a revisit condition | ADR 0003 | Owner |
-| 4 | Architecture | Modular monolith in one process. Ledger core as a pure library, provider simulator behind an adapter, Postgres with per-payment locking and an idempotency table, injected clock and randomness. Append-only journal plus an operations table, not full event sourcing | ADR 0004 | Owner |
-| 5 | Demo scope | M0: CLI, JSON trace and one static viewer page. Full UI in M1 | This proposal | Owner + business |
-| 6 | Brand | Short design brief, time-boxed, in parallel after the spike; needed before M1 UI | Design brief | Owner + business |
+## M2: Repeatable operation under bounded load
 
-Decision 1 shapes 5 and 6, so this page is reviewed together with ADR 0002. Decision 2 blocks the M0 specification update. The spike result is recorded as ADR 0003 before ADR 0004 is written.
+Exercise multiple cases, restart/replay, resource limits and migration compatibility on an explicitly chosen storage design. Include concurrency tests where shared durable state is adopted. Measure processing cost and onboarding effort alongside throughput.
 
-## ADR schedule
+Exit evidence: workload, hardware, versions, seeds, repetitions, correctness results and known limits. Synthetic results do not establish production readiness.
 
-A row is written when its milestone starts. It is not written early to cover a role. Each ADR follows the technology-decision rule in engineering-handbook `standards.md`: same score for the chosen option and the rejected ones, plus a revisit condition.
+## Decisions before code
 
-| When | ADR | Decision |
-|---|---|---|
-| This iteration | 0003 | Language for the ledger core, from the Rust spike |
-| This iteration | 0004 | Architecture, database, and per-payment locking |
-| Before M0 code | 0005 | Test strategy: invariant tests, property tests, deterministic simulator |
-| Before M0 code | 0006 | API and trace contract |
-| Start of M1 | 0007 | Frontend stack and component library |
-| Start of M2 | 0008 | Observability: logs, metrics, traces |
-| Before release | 0009 | Delivery: CI, release, and versioning |
+- **Product acceptance:** this roadmap and [product brief](product.md), reviewed under sc-77.
+- **Domain scope:** reassess [sc-78](https://app.shortcut.com/du-1/story/78) and [sc-57](https://app.shortcut.com/du-1/story/57). Select the minimum policy and fixtures for M0. Refund/payout policy remains proposed; do not quietly replace another machine's ADR draft.
+- **Language:** [sc-79](https://app.shortcut.com/du-1/story/79). Compare Rust and Go with a bounded parsing, correlation, replay and domain-model spike. The previous ledger-only spike is a candidate to revise, not evidence already gathered.
+- **Architecture:** [sc-80](https://app.shortcut.com/du-1/story/80). Evaluate a modular monolith separating ingestion, evidence, analysis and presentation; isolate the simulator behind an adapter. One process is a candidate. Durable storage, locking, queues and outbox patterns need demonstrated requirements.
+- **Contracts and tests:** use reserved ADR 0005/0006 when needed for test strategy and the versioned case/trace contract. Record consumers and upgrade implications.
+- **Viewer:** choose the smallest rendering approach for M0; select a frontend framework only when required, using reserved ADR 0007. Observability and delivery retain ADR 0008/0009 at their gates.
 
-## Brand and UX direction
+Technology ADRs compare alternatives on the handbook scorecard: support horizon/EOL, license, supply chain, reversal cost, contributor cost and experiment evidence. LTS is a dependency support policy, not a property guaranteed by deployment topology. Record upgrade responsibility and revisit conditions.
 
-Direction only, not a design.
+Service extraction needs evidence for independent scaling, release ownership or failure isolation. A modular monolith can remain the long-term design; speculative scale is not a reason to distribute transactions.
 
-- **Metaphor:** a prism splits light into a spectrum, as a payment splits into journal entries. Logo and motion use the same idea.
-- **Logo:** a minimal single-color prism, legible at 16 px. The organization uses a simple monogram.
-- **Theme:** neutral background, one accent, light and dark modes. Semantic colors for money states (pending, settled, returned, refunded), never distinguished by red and green alone. Tabular figures for amounts.
-- **Motion:** only when it carries meaning, such as money moving between accounts during replay; 150–250 ms steps; honor `prefers-reduced-motion`.
-- **M1 views:** scenario runner (choose a scenario, step through it, inject failures); timeline of requests and events; ledger balances per account with an invariant status.
-- **Prior art:** design tokens on an existing component library (Radix or shadcn/ui); no custom design system.
-- **Display language:** English, amounts as `1,000,000 VND`. A Vietnamese toggle is decided after M1.
+## Delivery reconciliation after acceptance
 
-## Non-goals
+sc-77 owns this proposal and brand. Before implementation resumes, reconcile #57–62 and #78–80 with the accepted gates; preserve ownership and record scope changes. Keep legacy bank stories #41/#42/#48/#49 deferred until separately reviewed. Keep #86 as research, not an orchestration commitment. Review iteration 63 with both owners; this PR promises no delivery dates.
 
-Real money, real providers, production deployment, end-user accounts and microservices.
+## Brand
 
-## Evidence
+Use the supplied wordmark as documented in the [brand guide](brand.md). A literal prism icon and bank-oriented visual narrative are no longer proposed. UI colors communicate evidence and uncertainty with text labels, never color alone.
 
-None yet. This page records intent and proposed decisions; each decision becomes accepted only in its own record with an approval reference.
+## Beyond M2
 
-## Open questions
-
-- Does Prism need to run without Docker? If so, SQLite replaces Postgres for M0. Its single writer still keeps one payment's transitions in order, but it does not exercise row locking, so the multi-payment concurrency demonstration moves entirely to M2.
-- Which consumer-protection rules apply if a refund ever withholds the fee? Not checked; not needed for the recommended M0 policy.
+Consider an adjacent domain after demonstrated operator value and a second real use case. Live integration, sensitive data, automated remediation and commercial operation each need new scope, security and business review. No banking milestone is precommitted.

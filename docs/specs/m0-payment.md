@@ -3,6 +3,8 @@
 Status: Draft for domain review. Owner: @vothanhdat2000. Updated: 2026-10-26.
 Delivery reference: [Shortcut story 57](https://app.shortcut.com/du-1/story/57).
 
+Scope note, 2026-10-28: this is the earlier sandbox scenario, not the accepted specification for the proposed investigation app. [sc-77](https://app.shortcut.com/du-1/story/77) and the [roadmap](../roadmap.md) propose a narrower first case. Retain these invariants as candidate simulator requirements; reconcile #57 and the money-policy draft before implementation. The [product brief](../product.md) describes the proposed workflow, not approved ledger postings.
+
 ## Purpose and scope
 
 Give implementers and reviewers one scenario for demonstrating correct money movement. A simulated provider captures 1,000,000 VND for a marketplace seller. A provisional 20,000 VND platform fee leaves 980,000 VND payable to the seller. These fee values are proposed test fixtures, not product pricing.

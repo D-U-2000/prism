@@ -1,10 +1,10 @@
 # Contributing to Prism
 
-Prism is an educational financial systems project. Contributions should make system behavior easier to understand and verify.
+Prism is exploring payment exception investigation, backed by a deterministic financial sandbox. Contributions should help operators understand evidence and choose a justified next action. Read the [product brief](docs/product.md) for proposed scope and maturity.
 
 ## Before opening a pull request
 
-- Link the change to a Shortcut story or a GitHub issue.
+- Maintainers must track work in Shortcut before implementation and link the story in the PR. External contributors may open a GitHub issue first; a maintainer creates or links its Shortcut story before work begins.
 - Keep one behavioral change per pull request.
 - Add or update the invariant, test, or simulation that proves the change.
 - Run the local checks described in the repository Makefile.

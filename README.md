@@ -1,42 +1,40 @@
 # Prism
 
-Prism is a glass-box financial systems sandbox for learning, testing, and explaining payment infrastructure.
+![Prism wordmark](assets/brand/prism-wordmark-dark.svg)
 
-The first milestone models a virtual payment flow in Vietnamese đồng with a deterministic provider adapter, an append-only ledger, idempotency, refunds, reconciliation, and failure injection. The system is designed to make correctness visible before adding banking features.
+**Make complex operations understandable, recoverable, and verifiable.**
+
+Prism is an open-source project exploring payment exception investigation: help payment engineers and operations teams understand what happened, identify what remains unknown, and choose a safe next step with traceable evidence.
+
+## The first problem
+
+A provider accepts a payment, the request times out, and the order stays pending. A callback arrives twice. An operator needs to know whether retrying could charge the customer again.
+
+The proposed first app brings the payment timeline, provider observations, journal evidence and unresolved discrepancies into one case. It distinguishes confirmed facts, inferences and missing evidence. Closing a case must not invent a successful payment.
 
 ## Status
 
-Early development. The repository is being built in public-ready form; no real money, credentials, customer data, or production integrations are used.
+**Design stage. No runnable payment engine or investigation app exists yet.** Team acceptance of this product proposal is tracked in [sc-77](https://app.shortcut.com/du-1/story/77). Product value, performance and willingness to pay have not been validated.
 
-## Scope
+The first milestones use synthetic data, virtual money and simulated providers only. Investigation is read-only with respect to source financial records. A deterministic sandbox supplies reproducible failures and ground truth; it is the proving environment for the product.
 
-- Payment core first: authorization, capture, refund, payout, and reconciliation.
-- Deterministic simulations for retries, duplicate events, timeouts, and crashes.
-- Explicit invariants and an audit trail that can be inspected from a demo.
-- Later expansion only after the payment core passes correctness and demonstration gates.
+## First useful experience
 
-Stripe, Monzo, Wise, and Starling are study references. Prism is an independent educational and engineering project.
+- Open a synthetic exception case and follow its evidence timeline.
+- Compare provider observations with local payment and ledger records.
+- Recognize duplicates, missing evidence and conflicting outcomes.
+- Explain a safe next step and export a summary with evidence references.
 
-## Development
+These are planned capabilities, not shipped features. Live provider connections, real customer data, automated refunds and a general incident-management platform are outside initial scope.
 
-The implementation language is intentionally left open until the first design spike compares Rust and Go against the project constraints.
+## Direction and contribution
 
-```text
-docs/              decision records and system design
-crates/            Rust workspace boundary (when selected)
-services/          service boundaries and adapters
-```
+Start with the [product brief](docs/product.md), [roadmap](docs/roadmap.md) and [documentation index](docs/README.md). The [brand guide](docs/brand.md) describes the supplied wordmark and its use.
 
-## Working agreement
+Language, database, frontend and deployment choices remain open. A modular monolith is a candidate, subject to a scored architecture decision. There is no requirement to adopt microservices as the project grows.
 
-1. Define the scenario and invariants.
-2. Implement the smallest deterministic slice.
-3. Prove behavior with tests and failure simulations.
-4. Show the flow through a glass-box demo.
-5. Record evidence before expanding scope.
-
-Start with the [documentation index](docs/README.md) and [working rules](AGENTS.md). See [CONTRIBUTING.md](CONTRIBUTING.md) for contributions and [SECURITY.md](SECURITY.md) for reporting.
+See [CONTRIBUTING.md](CONTRIBUTING.md), [working rules](AGENTS.md) and [SECURITY.md](SECURITY.md). Shortcut owns work status; Git owns specifications; GitHub PRs hold review and verification evidence.
 
 ## License
 
-Apache-2.0. See [LICENSE](LICENSE) and [NOTICE](NOTICE).
+Apache-2.0. See [LICENSE](LICENSE) and [NOTICE](NOTICE). Prism is independent; references to other products do not imply affiliation or endorsement.
