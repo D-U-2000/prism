@@ -15,6 +15,8 @@ Update documents when their dependencies or behavior change. An updated date alo
 
 Document behavior changes in the same PR as the code change.
 
+Public documentation must explain scope, status and contribution steps without access to internal planning tools. Link public issues, PRs and repository documents for reader-facing context; keep internal ticket links in PR tracking metadata. Maintainers remain responsible for internal delivery tracking.
+
 ## Review and exceptions
 
 Deterministic checks cover structure and links; humans assess usefulness, assumptions and evidence. AI findings must point to a specific passage and explain the consequence; they are advisory until checked.

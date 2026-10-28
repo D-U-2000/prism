@@ -1,6 +1,6 @@
 # Brand guide
 
-Status: Proposed for sc-77 review. Owner: @vothanhdat2000. Updated: 2026-10-28.
+Status: Proposed. Owner: @vothanhdat2000. Updated: 2026-10-28.
 
 ## Name and promise
 
@@ -38,4 +38,4 @@ Prefer readable system typography, aligned layouts and progressive disclosure fo
 
 ## Review and maintenance
 
-Review this identity with the product direction under [sc-77](https://app.shortcut.com/du-1/story/77). Verify asset rendering, small sizes and both surfaces after edits. Keep text source and outlines visually aligned; regenerate and inspect the outlined variants after typography changes. Screenshots prove appearance on the inspected renderer only, not trademark availability or user recognition.
+Review this identity with the product direction in [the product-direction PR](https://github.com/D-U-2000/prism/pull/12). Verify asset rendering, small sizes and both surfaces after edits. Keep text source and outlines visually aligned; regenerate and inspect the outlined variants after typography changes. Screenshots prove appearance on the inspected renderer only, not trademark availability or user recognition.

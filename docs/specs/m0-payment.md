@@ -1,9 +1,9 @@
 # M0: Virtual marketplace payment
 
 Status: Draft for domain review. Owner: @vothanhdat2000. Updated: 2026-10-26.
-Delivery reference: [Shortcut story 57](https://app.shortcut.com/du-1/story/57).
+Related direction: [product brief](../product.md).
 
-Scope note, 2026-10-28: this is the earlier sandbox scenario, not the accepted specification for the proposed investigation app. [sc-77](https://app.shortcut.com/du-1/story/77) and the [roadmap](../roadmap.md) propose a narrower first case. Retain these invariants as candidate simulator requirements; reconcile #57 and the money-policy draft before implementation. The [product brief](../product.md) describes the proposed workflow, not approved ledger postings.
+Scope note, 2026-10-28: this is the earlier sandbox scenario, not the accepted specification for the proposed investigation app. The [product brief](../product.md) and [roadmap](../roadmap.md) propose a narrower first case. Retain these invariants as candidate simulator requirements; reconcile this specification and the money-policy draft before implementation. The [product brief](../product.md) describes the proposed workflow, not approved ledger postings.
 
 ## Purpose and scope
 

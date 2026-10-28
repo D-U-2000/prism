@@ -1,7 +1,7 @@
 # Product direction
 
-Status: Proposed for sc-77 review. Owner: @vothanhdat2000. Updated: 2026-10-28.
-Review: engineering by @vothanhdat2000 and business by @lvphuyn1500 through the PR linked in [sc-77](https://app.shortcut.com/du-1/story/77).
+Status: Proposed. Owner: @vothanhdat2000. Updated: 2026-10-28.
+Review: engineering by @vothanhdat2000 and business by @lvphuyn1500 in [the product-direction PR](https://github.com/D-U-2000/prism/pull/12).
 
 ## Positioning
 
@@ -9,7 +9,7 @@ Prism helps payment teams investigate and resolve payment exceptions with tracea
 
 The long-term promise is to make complex operations understandable, recoverable and verifiable. Payments are the first domain in which to test that promise, not a claim that one workflow already fits every industry.
 
-The owner requested this direction and a brand proposal on 2026-10-28. Customer demand, differentiation and commercial viability remain hypotheses. Team acceptance is not customer validation.
+Customer demand, differentiation and commercial viability remain hypotheses. Acceptance of a design is not customer validation.
 
 ## User and job
 

@@ -1,7 +1,7 @@
 # Southeast Asian payment orchestration
 
 Status: Research, not an accepted scope change. Owner: @vothanhdat2000. Updated: 2026-10-27.
-Tracking: [sc-86](https://app.shortcut.com/du-1/story/86).
+Research introduced in [PR #11](https://github.com/D-U-2000/prism/pull/11).
 Baseline inspected: Prism main `ad1a55e`; engineering-handbook main `a192f0e`.
 
 Continuity note, 2026-10-28: this research predates the [payment-operations proposal](../product.md). Its routing experiment remains deferred research, not a requirement for the new M0 workflow. The original analysis is retained below as historical context.
