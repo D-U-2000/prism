@@ -20,6 +20,8 @@ Read [docs/README.md](docs/README.md) and the relevant source document before ch
 - Writing and review: [documentation standard](docs/standards/documentation.md). Prism-only rules; the handbook wins on conflict.
 - Decisions, experiments and metrics: [working method](docs/standards/method.md). Prism-only loop; the handbook wins on conflict.
 - Current work and continuity: [handoff](docs/handoff.md).
+- Product scope and validation: [product brief](docs/product.md) and [roadmap](docs/roadmap.md).
+- Brand assets and usage: [brand guide](docs/brand.md).
 - Contribution and PR workflow: [CONTRIBUTING.md](CONTRIBUTING.md).
 - Review: [REVIEW.md](REVIEW.md).
 - Initial scenario: [M0 specification](docs/specs/m0-payment.md).

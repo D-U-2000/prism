@@ -4,6 +4,8 @@ Status: Research, not an accepted scope change. Owner: @vothanhdat2000. Updated:
 Tracking: [sc-86](https://app.shortcut.com/du-1/story/86).
 Baseline inspected: Prism main `ad1a55e`; engineering-handbook main `a192f0e`.
 
+Continuity note, 2026-10-28: this research predates the [payment-operations proposal](../product.md). Its routing experiment remains deferred research, not a requirement for the new M0 workflow. The original analysis is retained below as historical context.
+
 ## Question and conclusion
 
 Can fragmented local payment methods provide a useful future simulation problem for Prism? Yes, as a research proposal: demonstrate capability-aware routing and recovery across simulated providers after the current money-correctness milestones. The existing [roadmap](../roadmap.md) remains a draft and this note does not accept its proposed technology or money-policy choices.
