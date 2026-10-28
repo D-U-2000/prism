@@ -1,19 +1,19 @@
-# Current handoff
+# Current development status
 
-Status: Product proposal pending team review. Owner: @vothanhdat2000. Updated: 2026-10-28.
+Owner: @vothanhdat2000. Updated: 2026-10-28.
 
-## Current work
+## Current direction
 
-[sc-77](https://app.shortcut.com/du-1/story/77) covers the payment-operations direction and supplied brand. Read [product](product.md), [roadmap](roadmap.md), [ADR 0010](adr/0010-payment-operations-direction.md) and [brand](brand.md). No engine, viewer or customer-validation result exists yet.
+[PR #12](https://github.com/D-U-2000/prism/pull/12) introduced the payment-operations proposal and brand. Read the [product brief](product.md), [roadmap](roadmap.md), [ADR 0010](adr/0010-payment-operations-direction.md) and [brand guide](brand.md). No engine, investigation viewer or customer-validation result exists yet.
 
-## Next action
+## Next decisions
 
-Dat and Uyen review the proposed user, M0 workflow, scope and brand. After acceptance, reconcile Shortcut #57–62 and #78–80, then freeze the M0 case contract and expected findings. ADR 0002 remains absent from inspected main; its reported local draft must be reconciled with its author before adoption or replacement.
+Review the proposed user, M0 workflow, scope and brand. Then reconcile the earlier [payment specification](specs/m0-payment.md) and freeze the M0 case contract and expected findings. Money policy, implementation language and architecture remain open. ADR 0002 has not been published in this repository.
 
-## Constraints
+## Boundaries
 
-Synthetic data and virtual money only; read-only investigation of source financial records. Preserve organization permissions. No stack or production authorization is implied. GitHub owns review evidence; Shortcut owns delivery state.
+Synthetic data and virtual money only; investigation cannot change source financial records. No production integration is authorized by the proposal. Document and asset checks do not establish payment correctness, usability or business value.
 
-## Verification boundary
+## Follow development
 
-Baseline: Prism main `d25101c`; handbook main `a192f0e`, inspected 2026-10-28. Document and asset checks are reported in the PR. They do not establish payment correctness, usability or business value. Settings observations remain in [repository setup](repository-setup.md).
+Use [GitHub Issues](https://github.com/D-U-2000/prism/issues) for questions and proposed work, and [pull requests](https://github.com/D-U-2000/prism/pulls) for changes and review evidence. Contributors do not need access to internal planning tools.

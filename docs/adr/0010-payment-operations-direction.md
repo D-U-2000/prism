@@ -1,6 +1,6 @@
 # ADR 0010: Payment operations as the product entry point
 
-- Status: Proposed; team acceptance pending under sc-77
+- Status: Proposed
 - Date: 2026-10-28
 - Owner: @vothanhdat2000
 - Review: @vothanhdat2000 and @lvphuyn1500
@@ -30,4 +30,4 @@ No customer demand, ROI, comparative superiority or production reliability is de
 
 ## Acceptance record
 
-Pending engineering and business review in the PR linked from [sc-77](https://app.shortcut.com/du-1/story/77). On acceptance, update this status, record the approval reference and mark affected parts of ADR 0001 superseded. Merging a draft alone does not accept it.
+Proposal introduced in [PR #12](https://github.com/D-U-2000/prism/pull/12). Explicit engineering and business acceptance is not recorded in this ADR. On acceptance, update this status, record the approval reference and mark affected parts of ADR 0001 superseded. Merging a draft alone does not accept it.

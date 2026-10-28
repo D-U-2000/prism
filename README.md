@@ -14,7 +14,7 @@ The proposed first app brings the payment timeline, provider observations, journ
 
 ## Status
 
-**Design stage. No runnable payment engine or investigation app exists yet.** Team acceptance of this product proposal is tracked in [sc-77](https://app.shortcut.com/du-1/story/77). Product value, performance and willingness to pay have not been validated.
+**Design stage. No runnable payment engine or investigation app exists yet.** The [product brief](docs/product.md) and [roadmap](docs/roadmap.md) describe the proposed scope. Product value and performance have not been validated.
 
 The first milestones use synthetic data, virtual money and simulated providers only. Investigation is read-only with respect to source financial records. A deterministic sandbox supplies reproducible failures and ground truth; it is the proving environment for the product.
 
@@ -33,7 +33,7 @@ Start with the [product brief](docs/product.md), [roadmap](docs/roadmap.md) and 
 
 Language, database, frontend and deployment choices remain open. A modular monolith is a candidate, subject to a scored architecture decision. There is no requirement to adopt microservices as the project grows.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md), [working rules](AGENTS.md) and [SECURITY.md](SECURITY.md). Shortcut owns work status; Git owns specifications; GitHub PRs hold review and verification evidence.
+Questions and proposals belong in [GitHub Issues](https://github.com/D-U-2000/prism/issues); changes are reviewed through [pull requests](https://github.com/D-U-2000/prism/pulls). See [CONTRIBUTING.md](CONTRIBUTING.md) and [SECURITY.md](SECURITY.md).
 
 ## License
 

@@ -1,13 +1,13 @@
 # Roadmap proposal
 
 Status: Proposed for owner and business review. Owner: @vothanhdat2000. Updated: 2026-10-28.
-Tracking: [sc-77](https://app.shortcut.com/du-1/story/77). Acceptance requires engineering and business review on the PR.
+Proposal introduced in [PR #12](https://github.com/D-U-2000/prism/pull/12). Acceptance requires recorded engineering and business review.
 
 ## Purpose
 
 Deliver the [payment exception workflow](product.md) in small, verifiable steps. The sandbox supplies evidence; investigation is the proposed product. No runnable implementation exists yet.
 
-M0, M1 and M2 remain the milestone names. This proposal changes their scope; it does not silently complete or rename existing Shortcut implementation stories.
+M0, M1 and M2 remain the milestone names. Their scope reflects the proposed investigation workflow; implementation has not started.
 
 Each milestone starts only after the previous gate has recorded evidence and owner acceptance. Keep at most three active stories; finish a useful slice before opening another workstream.
 
@@ -36,10 +36,10 @@ Exit evidence: workload, hardware, versions, seeds, repetitions, correctness res
 
 ## Decisions before code
 
-- **Product acceptance:** this roadmap and [product brief](product.md), reviewed under sc-77.
-- **Domain scope:** reassess [sc-78](https://app.shortcut.com/du-1/story/78) and [sc-57](https://app.shortcut.com/du-1/story/57). Select the minimum policy and fixtures for M0. Refund/payout policy remains proposed; do not quietly replace another machine's ADR draft.
-- **Language:** [sc-79](https://app.shortcut.com/du-1/story/79). Compare Rust and Go with a bounded parsing, correlation, replay and domain-model spike. The previous ledger-only spike is a candidate to revise, not evidence already gathered.
-- **Architecture:** [sc-80](https://app.shortcut.com/du-1/story/80). Evaluate a modular monolith separating ingestion, evidence, analysis and presentation; isolate the simulator behind an adapter. One process is a candidate. Durable storage, locking, queues and outbox patterns need demonstrated requirements.
+- **Product acceptance:** this roadmap and [product brief](product.md), reviewed through a public pull request.
+- **Domain scope:** reassess the money-policy draft and [payment specification](specs/m0-payment.md). Select the minimum policy and fixtures for M0. Refund/payout policy remains proposed; reconcile earlier proposals explicitly.
+- **Language:** Compare Rust and Go with a bounded parsing, correlation, replay and domain-model spike. The previous ledger-only spike is a candidate to revise, not evidence already gathered.
+- **Architecture:** Evaluate a modular monolith separating ingestion, evidence, analysis and presentation; isolate the simulator behind an adapter. One process is a candidate. Durable storage, locking, queues and outbox patterns need demonstrated requirements.
 - **Contracts and tests:** use reserved ADR 0005/0006 when needed for test strategy and the versioned case/trace contract. Record consumers and upgrade implications.
 - **Viewer:** choose the smallest rendering approach for M0; select a frontend framework only when required, using reserved ADR 0007. Observability and delivery retain ADR 0008/0009 at their gates.
 
@@ -47,9 +47,9 @@ Technology ADRs compare alternatives on the handbook scorecard: support horizon/
 
 Service extraction needs evidence for independent scaling, release ownership or failure isolation. A modular monolith can remain the long-term design; speculative scale is not a reason to distribute transactions.
 
-## Delivery reconciliation after acceptance
+## Before implementation
 
-sc-77 owns this proposal and brand. Before implementation resumes, reconcile #57–62 and #78–80 with the accepted gates; preserve ownership and record scope changes. Keep legacy bank stories #41/#42/#48/#49 deferred until separately reviewed. Keep #86 as research, not an orchestration commitment. Review iteration 63 with both owners; this PR promises no delivery dates.
+Accept the product scope, reconcile the earlier payment specification, and publish the selected case contract and expected findings. Banking remains deferred. [Payment orchestration research](research/payment-orchestration.md) is not an implementation commitment. No delivery dates are promised.
 
 ## Brand
 

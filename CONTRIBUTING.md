@@ -4,10 +4,10 @@ Prism is exploring payment exception investigation, backed by a deterministic fi
 
 ## Before opening a pull request
 
-- Maintainers must track work in Shortcut before implementation and link the story in the PR. External contributors may open a GitHub issue first; a maintainer creates or links its Shortcut story before work begins.
+- Start with a [GitHub issue](https://github.com/D-U-2000/prism/issues) for a bug, question or proposed change. Discuss larger changes before implementation, then link the issue in your PR. No account in the team’s internal planning tools is required; maintainers handle internal tracking.
 - Keep one behavioral change per pull request.
 - Add or update the invariant, test, or simulation that proves the change.
-- Run the local checks described in the repository Makefile.
+- Run checks relevant to the change. The repository currently contains documentation and assets; application test and formatting targets are not implemented yet.
 - Run `python tools/check_docs.py` (Python 3) for document structure and local file links. It does not check external URLs, anchors or factual accuracy.
 - Follow the [documentation standard](docs/standards/documentation.md) and [working method](docs/standards/method.md).
 - Do not include secrets, real payment data, or provider credentials.
